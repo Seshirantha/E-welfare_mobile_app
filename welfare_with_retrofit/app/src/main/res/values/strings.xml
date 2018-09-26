@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">E-Welfare UOK</string>
+    <string name="permission_warning">To continue, please enable Camera and Read Write External Storage permission for this application.</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="unknown">Unknown</string>
+    <string name="student_no">Student No</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="cancel">Cancel</string>
+</resources>
