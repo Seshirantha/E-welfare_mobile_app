@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="AppMaterialTheme" parent="SuperMaterialTheme">
+        <!--Customize your theme here-->
+
+        <item name="android:colorControlActivated" tools:targetApi="lollipop">@color/control_activate</item>
+        <item name="textColorError">@color/error_color</item>
+        <item name="android:colorControlNormal">@color/control_normal</item>
+
+
+    </style>
+
+</resources>

@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+
+    <color name="colorPrimary">#da0c01</color>
+    <color name="colorPrimaryDark">#960303</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="overflowBackground">#ede2b2</color>
+    <color name="overflowTextColor">#151413</color>
+
+    <!--if not valid-->
+    <color name="error_color">#ff3300</color>
+    <!--after typing valid something but cursor here-->
+    <color name="control_activate">#9c2f00</color>
+    <!--after typing valid somthing and cursor going to another -->
+    <color name="control_normal">#a4352d</color>
+
 </resources>

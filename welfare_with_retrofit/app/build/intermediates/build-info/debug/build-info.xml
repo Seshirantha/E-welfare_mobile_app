@@ -6,93 +6,106 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.1.2"
-    timestamp="1537982575602"
-    token="-1272232171796662853"
+    timestamp="1538079590674"
+    token="-146801955651444851"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="927" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="41" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="77" />
+        duration="0" />
     <task
         name="verifier"
-        duration="7" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
 
     <build
         build-mode="FULL"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1537978911745"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1538074785297"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\instant-run-apk\debug\app-armeabi-debug.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\instant-run-apk\debug\app-armeabi-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1537980020925"
-        verifier="METHOD_ADDED" >
+        timestamp="1538077209297"
+        verifier="R_CLASS_CHANGE" >
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1537982321747"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1538079105750"
+        verifier="R_CLASS_CHANGE" >
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\instant-run-apk\debug\app-armeabi-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1537982575602"
+        timestamp="1538079590674"
         verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

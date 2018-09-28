@@ -1,123 +1,135 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\225fe205f73a9fe0cfe1debdd1a5583c\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\design-27.0.0.aar\2e70f504a555a82161aeecc16cf2d3fb\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\701fb868775aa1edd4280137819fd638\AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\5014e7fbf78dbd1171f9ad64278c6a9d\AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.support:support-v4:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.0.aar\c5d10201e696423a7ca738854266fa53\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\7b64f418a619905ade08a974054ffeb8\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.0.aar\a113e400d8cb674020c4ac6e350178a0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\e0a4e6e7ff800ec3412b3ac66a15874c\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\106a26e21af1a7ad561b78708b722df3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.0.0.aar\9eaaf3d32a0faba259b48bd7289845c5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\transition-27.0.0.aar\9d4f93d52b55a6922343774192ecc99e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\ace200d860292589c0b03a97e4123054\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\50bbbe02bcb0b6bf5f975b73f8d6f406\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\c6dc69c78a120c00fefb908f4ad9f43d\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\86b5ffc8cf3a7810d36963b8112d447e\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:3:5-60
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:3:5-60
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:5:5-65
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:5:5-65
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:5:22-62
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:5:22-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:6:5-81
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:6:5-81
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:6:22-78
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:6:22-78
 uses-permission#ANDROID.PERMISSION.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:7:5-80
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:7:22-77
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:7:22-77
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:8:5-68
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:8:5-68
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:8:22-65
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:8:22-65
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:9:5-67
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:9:22-64
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:9:22-64
 uses-feature#android.hardware.camera
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:11:5-60
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:11:5-60
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:11:19-57
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:11:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:12:5-70
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:12:5-70
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:12:19-67
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:12:19-67
 uses-feature#android.hardware.camera.front
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:13:5-66
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:13:5-66
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:13:19-63
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:13:19-63
 uses-feature#android.hardware.camera.front.autofocus
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:14:5-76
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:14:5-76
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:14:19-73
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:14:19-73
 application
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:16:5-35:19
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:16:5-35:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\225fe205f73a9fe0cfe1debdd1a5583c\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\225fe205f73a9fe0cfe1debdd1a5583c\AndroidManifest.xml:9:5-20
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\86b5ffc8cf3a7810d36963b8112d447e\AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\86b5ffc8cf3a7810d36963b8112d447e\AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:22:9-35
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:22:9-35
 	android:label
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:19:9-41
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:19:9-41
 	android:roundIcon
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:21:9-54
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:21:9-54
 	android:largeHeap
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:20:9-33
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:20:9-33
 	android:icon
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:18:9-43
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:18:9-43
 	android:allowBackup
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:23:9-40
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:23:9-48
 activity#org.bytedeco.javacv.android.recognize.example.activities.MainActivity
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:24:9-30:20
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:24:9-30:20
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:24:19-58
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:24:19-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:28:27-74
 activity#org.bytedeco.javacv.android.recognize.example.activities.OpenCvRecognizeActivity
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:31:9-33:52
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:31:9-33:52
 	android:screenOrientation
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:33:13-49
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:33:13-49
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:32:13-63
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:32:13-63
 activity#org.bytedeco.javacv.android.recognize.example.activities.RegisterActivity
-ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:34:9-74
+ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:34:9-74
 	android:name
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml:34:19-62
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml:34:19-62
 uses-sdk
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\225fe205f73a9fe0cfe1debdd1a5583c\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\225fe205f73a9fe0cfe1debdd1a5583c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\design-27.0.0.aar\2e70f504a555a82161aeecc16cf2d3fb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\design-27.0.0.aar\2e70f504a555a82161aeecc16cf2d3fb\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\701fb868775aa1edd4280137819fd638\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\701fb868775aa1edd4280137819fd638\AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\5014e7fbf78dbd1171f9ad64278c6a9d\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\5014e7fbf78dbd1171f9ad64278c6a9d\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.0.aar\c5d10201e696423a7ca738854266fa53\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.0.aar\c5d10201e696423a7ca738854266fa53\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\7b64f418a619905ade08a974054ffeb8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\7b64f418a619905ade08a974054ffeb8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.0.aar\a113e400d8cb674020c4ac6e350178a0\AndroidManifest.xml:20:5-44
@@ -126,22 +138,28 @@ MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\semad
 MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\e0a4e6e7ff800ec3412b3ac66a15874c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\106a26e21af1a7ad561b78708b722df3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\106a26e21af1a7ad561b78708b722df3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.0.0.aar\9eaaf3d32a0faba259b48bd7289845c5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.0.0.aar\9eaaf3d32a0faba259b48bd7289845c5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\transition-27.0.0.aar\9d4f93d52b55a6922343774192ecc99e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\transition-27.0.0.aar\9d4f93d52b55a6922343774192ecc99e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\ace200d860292589c0b03a97e4123054\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\ace200d860292589c0b03a97e4123054\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\50bbbe02bcb0b6bf5f975b73f8d6f406\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\50bbbe02bcb0b6bf5f975b73f8d6f406\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\c6dc69c78a120c00fefb908f4ad9f43d\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\c6dc69c78a120c00fefb908f4ad9f43d\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\86b5ffc8cf3a7810d36963b8112d447e\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\86b5ffc8cf3a7810d36963b8112d447e\AndroidManifest.xml:20:5-22:41
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\src\main\AndroidManifest.xml
 meta-data#android.arch.lifecycle.VERSION
 ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\semad\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\86b5ffc8cf3a7810d36963b8112d447e\AndroidManifest.xml:25:9-27:47
 	android:value

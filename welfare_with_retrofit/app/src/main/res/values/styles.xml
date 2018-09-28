@@ -1,11 +1,36 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <!--Base application theme-->
+    <style name="AppMaterialTheme" parent="SuperMaterialTheme">
+        <!--Customize your theme here-->
+        <item name="android:colorControlActivated" tools:targetApi="lollipop">
+            @color/control_activate
+        </item>
+        <item name="textColorError">@color/error_color</item>
+        <item name="android:colorControlNormal" tools:targetApi="lollipop">@color/control_normal
+        </item>
+    </style>
+
+
+    <style name="SuperMaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--Parent theme for all Pre-lollipo and lollipop above version. i.e for all devices-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--tool bar styles-->
+    <style name="ToolBarTheme" parent="Theme.AppCompat.Light">
+        <!--color of the tool bar title-->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!--color of the floating button-->
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <!--pop up menu in tool bar styles-->
+    <style name="PopUpMenuThame" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/overflowBackground</item>
     </style>
 
 </resources>

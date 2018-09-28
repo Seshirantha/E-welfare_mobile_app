@@ -17,27 +17,28 @@ import org.bytedeco.javacv.android.recognize.example.R;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
     private boolean mPermissionReady;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ButterKnife.bind(this);
+
         findViewById(R.id.btnOpenCv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mPermissionReady) {
                     startActivity(new Intent(MainActivity.this, OpenCvRecognizeActivity.class));
                 }
-            }
-        });
-
-        findViewById(R.id.btnRegister).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
         });
 
@@ -74,5 +75,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @OnClick(R.id.btnRegister)
+    public void goToRegister(){
+
+        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+
     }
 }
