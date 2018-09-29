@@ -31,7 +31,12 @@
         <activity
             android:name=".activities.OpenCvRecognizeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activities.RegisterActivity"></activity>
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppMaterialTheme"></activity>
     </application>
 
 </manifest>

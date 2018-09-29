@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        findViewById(R.id.btnOpenCv).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mPermissionReady) {
-                    startActivity(new Intent(MainActivity.this, OpenCvRecognizeActivity.class));
-                }
-            }
-        });
+//        findViewById(R.id.btnOpenCv).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (mPermissionReady) {
+//                    startActivity(new Intent(MainActivity.this, OpenCvRecognizeActivity.class));
+//                }
+//            }
+//        });
 
         int cameraPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
         int storagePermssion = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -82,5 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(new Intent(MainActivity.this, RegisterActivity.class));
 
+    }
+
+    @OnClick(R.id.btnLogin)
+    public void goToLogin() {
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
 }

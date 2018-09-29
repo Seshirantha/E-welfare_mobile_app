@@ -5,9 +5,9 @@
     <style name="AppMaterialTheme" parent="SuperMaterialTheme">
         <!--Customize your theme here-->
 
-        <item name="android:colorControlActivated" tools:targetApi="lollipop">@color/control_activate</item>
+        <item name="android:colorControlActivated" tools:targetApi="lollipop">@color/colorPrimaryDark</item>
         <item name="textColorError">@color/error_color</item>
-        <item name="android:colorControlNormal">@color/control_normal</item>
+        <item name="android:colorControlNormal">@color/colorPrimary</item>
 
 
     </style>

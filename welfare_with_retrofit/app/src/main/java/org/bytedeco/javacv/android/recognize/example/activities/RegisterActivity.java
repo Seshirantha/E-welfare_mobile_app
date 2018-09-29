@@ -7,6 +7,8 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import org.bytedeco.javacv.android.recognize.example.R;
 import org.bytedeco.javacv.android.recognize.example.animation.Constants;
 import org.bytedeco.javacv.android.recognize.example.retrofit.RetrofitClient;
+
 
 import java.io.IOException;
 
@@ -82,21 +85,30 @@ public class RegisterActivity extends AppCompatActivity {
 //        });
     }
 
-
-
-
+    
     @OnClick(R.id.btnDoRegister)
     public void register(){
-        String student_no = etStudentNo.getText().toString();
-        String email = etEmail.getText().toString();
-        String password = etPassword.getText().toString();
-        String confirm_password = etConfirmPassword.getText().toString();
+        String sStudent_no = etStudentNo.getText().toString();
+        String sEmail = etEmail.getText().toString();
+        String sPassword = etPassword.getText().toString();
+        String sConfirm_password = etConfirmPassword.getText().toString();
+
+        if (doValidation(sStudent_no, sEmail, sPassword, sConfirm_password)) {
+
+            callHttpRegister(sStudent_no, sEmail, sPassword, sConfirm_password);
+
+        }
+
+    }
+
+    public boolean doValidation(String student_no, String email, String password, String confirm_password ){
 
         boolean isValid = true;
 
         // Validate student no
         if (student_no.isEmpty()) {
-            inputLayoutStudentNo.setError("Student no required");
+            // inputLayoutStudentNo.setError("Student no required");
+            etStudentNo.setError("Student no required");
             isValid = false;
         }else {
             inputLayoutStudentNo.setErrorEnabled(false);
@@ -104,7 +116,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Validate email
         if (email.isEmpty()){
-            inputLayoutEmail.setError("Email required");
+            // inputLayoutEmail.setError("Email required");
+            etEmail.setError("Email required");
             isValid = false;
         }else {
             inputLayoutEmail.setErrorEnabled(false);
@@ -112,7 +125,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         // validate password
         if (password.trim().length() < 8) {
-            inputLayoutPassword.setError("Minimum 8 characters required");
+            // inputLayoutPassword.setError("Minimum 8 characters required");
+            etPassword.setError("Minimum 8 characters required");
             isValid = false;
         }else {
             inputLayoutPassword.setErrorEnabled(false);
@@ -120,11 +134,17 @@ public class RegisterActivity extends AppCompatActivity {
 
         // validate confirm password
         if (confirm_password != password) {
-            inputLayoutConfirmPassword.setError("Password & confirm password must be match");
+            //inputLayoutConfirmPassword.setError("Password & confirm password must be match");
+            etConfirmPassword.setError("Password & confirm password must be match");
             isValid = false;
         }else {
             inputLayoutConfirmPassword.setErrorEnabled(false);
         }
+
+        return isValid;
+    }
+
+    public void callHttpRegister(String student_no, String email, String password, String confirm_password){
 
         Call<ResponseBody> call = RetrofitClient
                 .getmInstance()

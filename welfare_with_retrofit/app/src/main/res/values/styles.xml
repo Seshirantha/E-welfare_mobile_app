@@ -33,4 +33,12 @@
         <item name="android:background">@color/overflowBackground</item>
     </style>
 
+    <style name="ButtonTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AppMaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppMaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_margin="20dp"
         android:orientation="vertical">
 
@@ -28,8 +29,8 @@
             <!--logo-->
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/ivRegisterLogo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
 
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/university_logo" />
@@ -39,28 +40,31 @@
                 android:id="@+id/tvRegisterTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="Registration"
                 android:layout_below="@+id/ivRegisterLogo"
-                android:textSize="20sp" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Registration"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp" />
 
             <!--sub title-->
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/tvRegisterSubTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRegisterTitle"
                 android:layout_centerHorizontal="true"
                 android:text="E-Welfare - UOK"
-                android:textSize="10sp"
-                android:layout_below="@+id/tvRegisterTitle"/>
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
         </RelativeLayout>
         <!--end logo, title, sub title-->
 
         <!--input fields-->
         <LinearLayout
-            android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <!--student no-->
@@ -130,23 +134,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <!--register button-->
             <Button
+                android:theme="@style/ButtonTheme"
                 android:id="@+id/btnDoRegister"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/register" />
+                android:text="@string/register"
+                android:background="@drawable/button_background"
+                />
 
             <!--cancel button-->
             <Button
+                android:theme="@style/ButtonTheme"
                 android:id="@+id/btnDoCancel"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/cancel" />
+                android:background="@drawable/button_background"
+                android:text="@string/cancel"
+                />
 
         </LinearLayout>
         <!--end of button-->

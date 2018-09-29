@@ -27,6 +27,7 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppMaterialTheme" >
         <activity android:name="org.bytedeco.javacv.android.recognize.example.activities.MainActivity" >
             <intent-filter>
@@ -39,6 +40,11 @@
             android:name="org.bytedeco.javacv.android.recognize.example.activities.OpenCvRecognizeActivity"
             android:screenOrientation="portrait" />
         <activity android:name="org.bytedeco.javacv.android.recognize.example.activities.RegisterActivity" />
+        <activity android:name="org.bytedeco.javacv.android.recognize.example.activities.LoginActivity" />
+        <activity
+            android:name="org.bytedeco.javacv.android.recognize.example.activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppMaterialTheme" />
 
         <meta-data
             android:name="android.arch.lifecycle.VERSION"
