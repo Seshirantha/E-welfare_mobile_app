@@ -5,7 +5,11 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 
 import org.bytedeco.javacv.android.recognize.example.R;
@@ -43,11 +47,16 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.inputLayoutLogInPassword)
     TextInputLayout textInputLayoutLogInPasswrod;
 
+    @BindView(R.id.loginProgressBar)
+    ProgressBar loginProgressBar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
     }
 
 
@@ -57,22 +66,15 @@ public class LoginActivity extends AppCompatActivity {
         String sStudentNo = etLogInStudentNo.getText().toString();
         String sPassword = etLoginPassword.getText().toString();
 
-        //        if (doValidation(sStudentNo, sPassword)){
+        if (doValidation(sStudentNo, sPassword)) {
 
-           callHttpLogin("se/2013/005", "12345678");
+            callHttpLogin(sStudentNo, sPassword);
 
-            //  callRetrofit2();
-
-
+        }
     }
 
-        // startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-
-//    }
-
-
-    public void callHttpLogin(String studentNo, String password){
-
+    public void callHttpLogin(String studentNo, String password) {
+        visibleProgressBar();
         Call<ResponseBody> loginCall = RetrofitClient
                 .getmInstance()
                 .getApi()
@@ -83,52 +85,104 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
                 // Log.i(TAG, "onResponse: Json: " + response.toString());
+                if (response.isSuccessful()) {
 
-                try {
+                    try {
 
-                    String json = response.body().string();
-                     Log.i(TAG, "onResponse: json : " + json);
+                        String json = response.body().string();
+                        Log.i(TAG, "onResponse: json : " + json);
 
-                    JSONObject data = null;
-                    data = new JSONObject(json);
+                        JSONObject data = null;
+                        data = new JSONObject(json);
 
-                    // save access token in shared preference
-                    String token = data.getString("token");
-                    storeToken(token);
-                     Log.i(TAG, "onResponse: data : " + token);
+                        // save access token in shared preference
+                        String token = data.getString("token");
+                        storeToken(token);
 
-                }catch (JSONException e){
+                        String id = data.getString("id");
+                        storeUserId(id);
 
-                    Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+                        String role = data.getString("role");
+                        storeUserRole(role);
 
-                } catch (IOException e) {
-                    Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+                        invisibleProgressBar();
+                        Intent goToHomeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                        goToHomeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(goToHomeIntent);
+                        finish();
 
+                        Log.i(TAG, "onResponse: data : " + token);
+
+
+                    } catch (JSONException e) {
+                        invisibleProgressBar();
+                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+
+                    } catch (IOException e) {
+                        invisibleProgressBar();
+                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+                    }
+                } else {
+
+                    String json = null;
+                    try {
+                        json = response.errorBody().string();
+                        JSONObject data = null;
+                        data = new JSONObject(json);
+                        String errorMessage = data.getString("fail");
+                        invisibleProgressBar();
+                        Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse: json on error : " + errorMessage);
+
+                    } catch (IOException e) {
+                        invisibleProgressBar();
+                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse else IOException : " + e.getMessage());
+                    } catch (JSONException e) {
+                        invisibleProgressBar();
+                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse JSONException : " + e.getMessage());
+                    }
                 }
-
 
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-                Log.i(TAG, t.getMessage());
+                invisibleProgressBar();
+                Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Log.i(TAG, "onFailure : " + t.getMessage());
             }
 
         });
 
 
-        // how to get the access token from shredpreferences
-        String savedToken = SharedPrefManager.getInstance(this).getToken();
-        Log.i(TAG, "Saved Token : " + savedToken);
+//        // how to get the access token from shredpreferences
+//        String savedToken = SharedPrefManager.getInstance(this).getToken();
+//        Log.i(TAG, "Saved Token : " + savedToken);
 
     }
 
-    public void storeToken(String token ){
+    // store token
+    public void storeToken(String token) {
         SharedPrefManager.getInstance(getApplicationContext()).storeToken(token);
     }
 
-    public boolean doValidation(String studentNo, String password){
+    // store id
+    public void storeUserId(String id) {
+        SharedPrefManager.getInstance(getApplicationContext()).storeUserId(id);
+    }
+
+    // store role
+    public void storeUserRole(String role) {
+        SharedPrefManager.getInstance(getApplicationContext()).storeUserType(role);
+    }
+
+
+    public boolean doValidation(String studentNo, String password) {
 
         boolean isValid = true;
 
@@ -137,7 +191,7 @@ public class LoginActivity extends AppCompatActivity {
             // inputLayoutStudentNo.setError("Student no required");
             etLogInStudentNo.setError("Student no required");
             isValid = false;
-        }else {
+        } else {
             textInputLayoutLogInStudentNo.setErrorEnabled(false);
 
         }
@@ -147,19 +201,29 @@ public class LoginActivity extends AppCompatActivity {
             // inputLayoutPassword.setError("Minimum 8 characters required");
             etLoginPassword.setError("Minimum 8 characters required");
             isValid = false;
-        }else {
+        } else {
             textInputLayoutLogInPasswrod.setErrorEnabled(false);
         }
 
         return isValid;
     }
 
+    public void visibleProgressBar () {
+        loginProgressBar.setVisibility(View.VISIBLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+    }
 
-
+    public void invisibleProgressBar () {
+        loginProgressBar.setVisibility(View.INVISIBLE);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+    }
 
     @OnClick(R.id.btnDoLogInCancel)
     public void doLoginCancel() {
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        Intent backToLandingIntent = new Intent(LoginActivity.this, MainActivity.class);
+        backToLandingIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(backToLandingIntent);
     }
 
 

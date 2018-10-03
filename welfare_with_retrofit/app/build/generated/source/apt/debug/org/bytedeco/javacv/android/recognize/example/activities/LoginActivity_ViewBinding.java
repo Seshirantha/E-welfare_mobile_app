@@ -6,6 +6,7 @@ import android.support.annotation.UiThread;
 import android.support.design.widget.TextInputLayout;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import butterknife.Unbinder;
 import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
@@ -34,6 +35,7 @@ public class LoginActivity_ViewBinding implements Unbinder {
     target.etLoginPassword = Utils.findRequiredViewAsType(source, R.id.etLogInPassword, "field 'etLoginPassword'", EditText.class);
     target.textInputLayoutLogInStudentNo = Utils.findRequiredViewAsType(source, R.id.inputLayoutLogInStudentNo, "field 'textInputLayoutLogInStudentNo'", TextInputLayout.class);
     target.textInputLayoutLogInPasswrod = Utils.findRequiredViewAsType(source, R.id.inputLayoutLogInPassword, "field 'textInputLayoutLogInPasswrod'", TextInputLayout.class);
+    target.loginProgressBar = Utils.findRequiredViewAsType(source, R.id.loginProgressBar, "field 'loginProgressBar'", ProgressBar.class);
     view = Utils.findRequiredView(source, R.id.btnDoLogIn, "method 'login'");
     view2131230762 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
@@ -63,6 +65,7 @@ public class LoginActivity_ViewBinding implements Unbinder {
     target.etLoginPassword = null;
     target.textInputLayoutLogInStudentNo = null;
     target.textInputLayoutLogInPasswrod = null;
+    target.loginProgressBar = null;
 
     view2131230762.setOnClickListener(null);
     view2131230762 = null;

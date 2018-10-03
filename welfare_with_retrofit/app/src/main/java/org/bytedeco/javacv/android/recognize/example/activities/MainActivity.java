@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 
 import org.bytedeco.javacv.android.recognize.example.R;
@@ -41,6 +42,20 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
+
+//        String logoutMessage;
+//        if (savedInstanceState == null) {
+//            Bundle extras = getIntent().getExtras();
+//            if(extras == null) {
+//                logoutMessage = null;
+//            } else {
+//                logoutMessage = extras.getString("logoutMessage");
+//            }
+//        } else {
+//            logoutMessage = (String) savedInstanceState.getSerializable("logoutMessage");
+//        }
+
+
 
         int cameraPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
         int storagePermssion = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -80,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnRegister)
     public void goToRegister(){
 
-        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+        startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
     }
 

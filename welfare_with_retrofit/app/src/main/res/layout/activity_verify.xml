@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.VerifyActivity">
+
+    <ProgressBar
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:id="@+id/verifyProgressBar"
+        android:progressDrawable="@drawable/progress_circle"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <!--logo, title and sub title-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--logo-->
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivLogInLogo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/university_logo" />
+
+            <!--title-->
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvVerifyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivLogInLogo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/verification"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp" />
+
+            <!--sub title-->
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvLogInSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvVerifyTitle"
+                android:layout_centerHorizontal="true"
+                android:text="E-Welfare - UOK"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+        </RelativeLayout>
+        <!--end logo, title, sub title-->
+
+        <!--input fields-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <!--code-->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputLayoutVerifyCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etVerifyCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/code_with_4_characters"
+                    android:inputType="text" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+        <!--emd of input fiedls-->
+
+        <!--buttons-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <!--register button-->
+            <Button
+                android:theme="@style/ButtonTheme"
+                android:id="@+id/btnDoVerify"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/verify"
+                android:background="@drawable/button_background"
+                />
+
+            <!--cancel button-->
+            <Button
+                android:theme="@style/ButtonTheme"
+                android:id="@+id/btnDoVerifyCancel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
+                android:text="@string/cancel"
+                />
+
+        </LinearLayout>
+        <!--end of button-->
+
+    </LinearLayout>
+
+</RelativeLayout>

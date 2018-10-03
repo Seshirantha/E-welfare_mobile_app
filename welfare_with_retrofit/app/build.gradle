@@ -48,19 +48,24 @@ dependencies {
     implementation 'com.android.support:design:27.0.0'
     implementation 'com.android.support:cardview-v7:27.0.0'
 
-
+//    javacv library
     implementation group: 'org.bytedeco', name: 'javacv', version: '1.3.2'
     implementation group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '3.2.0-1.3', classifier: 'android-arm'
     implementation group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '3.2.0-1.3', classifier: 'android-x86'
     implementation group: 'org.bytedeco.javacpp-presets', name: 'ffmpeg', version: '3.2.1-1.3', classifier: 'android-arm'
     implementation group: 'org.bytedeco.javacpp-presets', name: 'ffmpeg', version: '3.2.1-1.3', classifier: 'android-x86'
 
+//    retrofit libraries
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
-
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.squareup.okhttp3:okhttp:2.5.0'
 
+//    butterknife libraries
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+//   loader library
+
+
 }

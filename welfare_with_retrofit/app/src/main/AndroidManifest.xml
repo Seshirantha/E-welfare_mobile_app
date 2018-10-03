@@ -36,7 +36,8 @@
         <activity
             android:name=".activities.HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppMaterialTheme"></activity>
+            android:theme="@style/AppMaterialTheme" />
+        <activity android:name=".activities.VerifyActivity"></activity>
     </application>
 
 </manifest>

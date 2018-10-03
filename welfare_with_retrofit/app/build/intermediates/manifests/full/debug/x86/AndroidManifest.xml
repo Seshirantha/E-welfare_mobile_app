@@ -44,6 +44,7 @@
             android:name="org.bytedeco.javacv.android.recognize.example.activities.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppMaterialTheme" />
+        <activity android:name="org.bytedeco.javacv.android.recognize.example.activities.VerifyActivity" />
 
         <meta-data
             android:name="android.arch.lifecycle.VERSION"

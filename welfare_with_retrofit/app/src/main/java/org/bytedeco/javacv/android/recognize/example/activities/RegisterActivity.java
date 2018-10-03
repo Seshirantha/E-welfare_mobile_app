@@ -17,7 +17,10 @@ import android.widget.Toast;
 
 import org.bytedeco.javacv.android.recognize.example.R;
 import org.bytedeco.javacv.android.recognize.example.animation.Constants;
+import org.bytedeco.javacv.android.recognize.example.preferences.SharedPrefManager;
 import org.bytedeco.javacv.android.recognize.example.retrofit.RetrofitClient;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 import java.io.IOException;
@@ -37,15 +40,23 @@ public class RegisterActivity extends AppCompatActivity {
     Constants.TransitionType type;
     String toolbarTitle;
 
-    @BindView(R.id.etStudentNo) EditText etStudentNo;
-    @BindView(R.id.etEmail) EditText etEmail;
-    @BindView(R.id.etPassword) EditText etPassword;
-    @BindView(R.id.etConfirmPassword) EditText etConfirmPassword;
+    @BindView(R.id.etStudentNo)
+    EditText etStudentNo;
+    @BindView(R.id.etEmail)
+    EditText etEmail;
+    @BindView(R.id.etPassword)
+    EditText etPassword;
+    @BindView(R.id.etConfirmPassword)
+    EditText etConfirmPassword;
 
-    @BindView(R.id.inputLayoutStudentNo) TextInputLayout inputLayoutStudentNo;
-    @BindView(R.id.inputLayoutEmail)TextInputLayout inputLayoutEmail;
-    @BindView(R.id.inputLayoutPassword) TextInputLayout inputLayoutPassword;
-    @BindView(R.id.inputLayoutConfirmPassword) TextInputLayout inputLayoutConfirmPassword;
+    @BindView(R.id.inputLayoutStudentNo)
+    TextInputLayout inputLayoutStudentNo;
+    @BindView(R.id.inputLayoutEmail)
+    TextInputLayout inputLayoutEmail;
+    @BindView(R.id.inputLayoutPassword)
+    TextInputLayout inputLayoutPassword;
+    @BindView(R.id.inputLayoutConfirmPassword)
+    TextInputLayout inputLayoutConfirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +96,9 @@ public class RegisterActivity extends AppCompatActivity {
 //        });
     }
 
-    
+
     @OnClick(R.id.btnDoRegister)
-    public void register(){
+    public void register() {
         String sStudent_no = etStudentNo.getText().toString();
         String sEmail = etEmail.getText().toString();
         String sPassword = etPassword.getText().toString();
@@ -101,7 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public boolean doValidation(String student_no, String email, String password, String confirm_password ){
+    public boolean doValidation(String student_no, String email, String password, String confirm_password) {
 
         boolean isValid = true;
 
@@ -110,16 +121,16 @@ public class RegisterActivity extends AppCompatActivity {
             // inputLayoutStudentNo.setError("Student no required");
             etStudentNo.setError("Student no required");
             isValid = false;
-        }else {
+        } else {
             inputLayoutStudentNo.setErrorEnabled(false);
         }
 
         // Validate email
-        if (email.isEmpty()){
+        if (email.isEmpty()) {
             // inputLayoutEmail.setError("Email required");
             etEmail.setError("Email required");
             isValid = false;
-        }else {
+        } else {
             inputLayoutEmail.setErrorEnabled(false);
         }
 
@@ -128,23 +139,23 @@ public class RegisterActivity extends AppCompatActivity {
             // inputLayoutPassword.setError("Minimum 8 characters required");
             etPassword.setError("Minimum 8 characters required");
             isValid = false;
-        }else {
+        } else {
             inputLayoutPassword.setErrorEnabled(false);
         }
 
         // validate confirm password
-        if (confirm_password != password) {
+        if (!confirm_password.equals(password)) {
             //inputLayoutConfirmPassword.setError("Password & confirm password must be match");
             etConfirmPassword.setError("Password & confirm password must be match");
             isValid = false;
-        }else {
+        } else {
             inputLayoutConfirmPassword.setErrorEnabled(false);
         }
 
         return isValid;
     }
 
-    public void callHttpRegister(String student_no, String email, String password, String confirm_password){
+    public void callHttpRegister(String student_no, String email, String password, String confirm_password) {
 
         Call<ResponseBody> call = RetrofitClient
                 .getmInstance()
@@ -155,15 +166,63 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-                // Log.i(TAG, String.valueOf(response.code()));
-                try {
-                    //if (response.isSuccessful()) {
-                    String s = response.body().string();
-                    Log.i(TAG, s);
-                    // }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (response.isSuccessful()) {
+
+                    try {
+
+                        String json = response.body().string();
+                        Log.i(TAG, "onResponse: json : " + json);
+
+                        JSONObject data = null;
+                        data = new JSONObject(json);
+
+                        String id = data.getString("id");
+                        String message = data.getString("message");
+                      storeUserId(id);
+
+//                        invisibleProgressBar();
+                        Intent goToVerifyIntent = new Intent(RegisterActivity.this, VerifyActivity.class);
+                        startActivity(goToVerifyIntent);
+                        finish();
+
+                        Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse: data : " + id);
+                        Log.i(TAG, "onResponse: data : " + message);
+
+                    } catch (JSONException e) {
+//                        invisibleProgressBar();
+                        Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+
+                    } catch (IOException e) {
+//                        invisibleProgressBar();
+                        Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+                    }
+                } else {
+
+                    String json = null;
+                    try {
+                        json = response.errorBody().string();
+                        JSONObject data = null;
+                        data = new JSONObject(json);
+                        String errorMessage = data.getString("fail");
+//                        invisibleProgressBar();
+                        Toast.makeText(RegisterActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse: json on error : " + errorMessage);
+
+                    } catch (IOException e) {
+//                        invisibleProgressBar();
+                        Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse else IOException : " + e.getMessage());
+                    } catch (JSONException e) {
+//                        invisibleProgressBar();
+                        Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse JSONException : " + e.getMessage());
+                    }
                 }
+
+
             }
 
             @Override
@@ -173,8 +232,14 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    public void storeUserId(String id){
+        SharedPrefManager.getInstance(getApplicationContext()).storeUserId(id);
+    }
+
     @OnClick(R.id.btnDoCancel)
-    public void cancel(){
-        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+    public void cancel() {
+        Intent backToLandingIntent = new Intent(RegisterActivity.this, MainActivity.class);
+        backToLandingIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(backToLandingIntent);
     }
 }
