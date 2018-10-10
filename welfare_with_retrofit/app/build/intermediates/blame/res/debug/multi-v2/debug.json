@@ -753,21 +753,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-v18_values-v18.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\701fb868775aa1edd4280137819fd638\\res\\values-v18\\values-v18.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "48",
-                        "endOffsets": "99"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-hy_values-hy.arsc.flat",
             "map": [
                 {
@@ -795,6 +780,21 @@
                         "startOffsets": "1945",
                         "endColumns": "100",
                         "endOffsets": "2041"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-v18_values-v18.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\701fb868775aa1edd4280137819fd638\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
                     }
                 }
             ]
@@ -1134,38 +1134,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-en-rIN_values-en-rIN.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\c6dc69c78a120c00fefb908f4ad9f43d\\res\\values-en-rIN\\values-en-rIN.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1907",
-                        "endColumns": "100",
-                        "endOffsets": "2003"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\701fb868775aa1edd4280137819fd638\\res\\values-en-rIN\\values-en-rIN.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,209,309,417,501,601,716,793,869,951,1054,1158,1257,1362,1465,1569,1725,1825",
-                        "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
-                        "endOffsets": "204,304,412,496,596,711,788,864,946,1049,1153,1252,1357,1460,1564,1720,1820,1902"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-ta_values-ta.arsc.flat",
             "map": [
                 {
@@ -1193,6 +1161,38 @@
                         "startOffsets": "1957",
                         "endColumns": "100",
                         "endOffsets": "2053"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-en-rIN_values-en-rIN.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\c6dc69c78a120c00fefb908f4ad9f43d\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1907",
+                        "endColumns": "100",
+                        "endOffsets": "2003"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\701fb868775aa1edd4280137819fd638\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,209,309,417,501,601,716,793,869,951,1054,1158,1257,1362,1465,1569,1725,1825",
+                        "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
+                        "endOffsets": "204,304,412,496,596,711,788,864,946,1049,1153,1252,1357,1460,1564,1720,1820,1902"
                     }
                 }
             ]
@@ -1230,38 +1230,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-mr_values-mr.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\701fb868775aa1edd4280137819fd638\\res\\values-mr\\values-mr.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,216,322,429,519,620,735,812,890,970,1082,1184,1280,1389,1490,1605,1762,1867",
-                        "endColumns": "110,105,106,89,100,114,76,77,79,111,101,95,108,100,114,156,104,79",
-                        "endOffsets": "211,317,424,514,615,730,807,885,965,1077,1179,1275,1384,1485,1600,1757,1862,1942"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\c6dc69c78a120c00fefb908f4ad9f43d\\res\\values-mr\\values-mr.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1947",
-                        "endColumns": "100",
-                        "endOffsets": "2043"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-lt_values-lt.arsc.flat",
             "map": [
                 {
@@ -1289,6 +1257,38 @@
                         "startOffsets": "105,221,322,435,522,631,752,834,915,1000,1109,1218,1318,1428,1532,1645,1821,1922",
                         "endColumns": "115,100,112,86,108,120,81,80,84,108,108,99,109,103,112,175,100,82",
                         "endOffsets": "216,317,430,517,626,747,829,910,995,1104,1213,1313,1423,1527,1640,1816,1917,2000"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\res\\merged\\debug\\values-mr_values-mr.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\701fb868775aa1edd4280137819fd638\\res\\values-mr\\values-mr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,216,322,429,519,620,735,812,890,970,1082,1184,1280,1389,1490,1605,1762,1867",
+                        "endColumns": "110,105,106,89,100,114,76,77,79,111,101,95,108,100,114,156,104,79",
+                        "endOffsets": "211,317,424,514,615,730,807,885,965,1077,1179,1275,1384,1485,1600,1757,1862,1942"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\semad\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\c6dc69c78a120c00fefb908f4ad9f43d\\res\\values-mr\\values-mr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1947",
+                        "endColumns": "100",
+                        "endOffsets": "2043"
                     }
                 }
             ]

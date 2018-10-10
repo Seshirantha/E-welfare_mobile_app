@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Oct 03 12:56:09 IST 2018
+#Sun Oct 07 23:23:20 IST 2018
 124.path=lib/armeabi/libopencv_text.so
 60.set=NATIVE_RESOURCE
 52.set=NATIVE_RESOURCE
@@ -78,10 +78,10 @@
 99.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 123.path=lib/x86/libjniavdevice.so
 50.set=NATIVE_RESOURCE
-42.set=DEX
+42.set=NATIVE_RESOURCE
 52.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 34.set=NATIVE_RESOURCE
-59.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+59.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 26.set=NATIVE_RESOURCE
 44.baseType=DIRECTORY
 18.set=NATIVE_RESOURCE
@@ -110,7 +110,7 @@
 60.path=lib/armeabi/libjniopencv_core.so
 75.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 70.baseType=DIRECTORY
-41.set=NATIVE_RESOURCE
+41.set=DEX
 30.baseType=DIRECTORY
 33.set=NATIVE_RESOURCE
 9.baseType=DIRECTORY
@@ -176,7 +176,7 @@
 52.path=lib/armeabi/libjniopencv_videoio.so
 126.set=NATIVE_RESOURCE
 67.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
-59.path=classes.dex
+59.path=lib/armeabi/libjniavutil.so
 118.set=NATIVE_RESOURCE
 69.baseType=DIRECTORY
 29.baseType=DIRECTORY
@@ -235,7 +235,7 @@
 14.set=NATIVE_RESOURCE
 92.set=NATIVE_RESOURCE
 117.baseType=DIRECTORY
-57.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
+57.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
 84.set=NATIVE_RESOURCE
 76.set=NATIVE_RESOURCE
 120.baseType=DIRECTORY
@@ -258,7 +258,7 @@
 116.set=NATIVE_RESOURCE
 66.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 71.baseType=DIRECTORY
-58.path=lib/armeabi/libjniavutil.so
+58.path=lib/armeabi/libjniavfilter.so
 108.set=NATIVE_RESOURCE
 34.baseType=DIRECTORY
 110.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
@@ -280,7 +280,7 @@
 67.path=lib/armeabi/libjniopencv_imgcodecs.so
 80.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 6.baseType=DIRECTORY
-59.set=DEX
+59.set=NATIVE_RESOURCE
 87.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 111.path=lib/armeabi/libjnicvkernels.so
 20.path=lib/x86/libjniopencv_calib3d.so
@@ -296,7 +296,7 @@
 126.baseType=DIRECTORY
 115.set=NATIVE_RESOURCE
 107.set=NATIVE_RESOURCE
-42.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
+42.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 87.baseType=DIRECTORY
 34.path=lib/x86/libavcodec.so
 47.baseType=DIRECTORY
@@ -337,7 +337,7 @@
 106.set=NATIVE_RESOURCE
 65.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 count=130
-57.path=lib/armeabi/libjniavfilter.so
+57.path=classes.dex
 105.baseType=DIRECTORY
 10.path=lib/x86/libjniavutil.so
 116.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
@@ -354,7 +354,7 @@ count=130
 65.set=NATIVE_RESOURCE
 19.path=lib/armeabi/libjniopencv_flann.so
 32.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
-57.set=NATIVE_RESOURCE
+57.set=DEX
 66.path=lib/x86/libjniopencv_flann.so
 96.baseType=DIRECTORY
 39.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
@@ -376,7 +376,7 @@ count=130
 89.baseType=DIRECTORY
 49.baseType=DIRECTORY
 92.baseType=DIRECTORY
-41.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
+41.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
 52.baseType=DIRECTORY
 33.path=lib/armeabi/libopencv_bioinspired.so
 12.baseType=DIRECTORY
@@ -395,7 +395,7 @@ count=130
 56.set=NATIVE_RESOURCE
 48.set=NATIVE_RESOURCE
 114.baseType=DIRECTORY
-42.path=classes.dex
+42.path=lib/armeabi/libjniopencv_videostab.so
 15.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 5.path=lib/armeabi/libjniavcodec.so
 49.path=lib/armeabi/libopencv_ml.so
@@ -464,7 +464,7 @@ count=130
 46.set=NATIVE_RESOURCE
 116.baseType=DIRECTORY
 38.set=NATIVE_RESOURCE
-41.path=lib/armeabi/libjniopencv_videostab.so
+41.path=classes.dex
 77.baseType=DIRECTORY
 14.base=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 4.path=lib/x86/libopencv_videoio.so

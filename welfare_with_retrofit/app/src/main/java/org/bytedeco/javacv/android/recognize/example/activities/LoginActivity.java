@@ -182,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public boolean doValidation(String studentNo, String password) {
+    private boolean doValidation(String studentNo, String password) {
 
         boolean isValid = true;
 

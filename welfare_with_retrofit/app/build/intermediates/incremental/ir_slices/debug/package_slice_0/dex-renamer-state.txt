@@ -1,4 +1,4 @@
-#Wed Oct 03 21:00:46 IST 2018
+#Wed Oct 10 00:12:16 IST 2018
 base.0=C\:\\Users\\semad\\AndroidStudioProjects\\welfare_mobile_app\\welfare_with_retrofit\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

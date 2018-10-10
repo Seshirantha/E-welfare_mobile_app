@@ -12,9 +12,9 @@ import retrofit2.http.Path;
 
 public interface Api {
 
-//    register
+    // register
     @Headers({"Accept: application/json"
-//            , "Content-Type : application/json"
+    //  , "Content-Type : application/json"
     })
     @FormUrlEncoded
     @POST("register")
@@ -25,9 +25,9 @@ public interface Api {
             @Field("confirm_password") String confirm_assword
     );
 
-//    login
+    // login
     @Headers({"Accept: application/json"
-//            , "Content-Type : application/json"
+            //  , "Content-Type : application/json"
     })
     @FormUrlEncoded
     @POST("login")
@@ -36,18 +36,18 @@ public interface Api {
             @Field("password") String password
     );
 
-//    logout
+    // logout
     @GET("logout")
     @Headers({"Accept: application/json"
-//            , "Content-Type : application/json"
+        // "Content-Type : application/json"
     })
     Call<ResponseBody> logoutUser(
             @Header("Authorization") String authToken
     );
 
-//    verification
+    // verification
     @Headers({"Accept: application/json"
-    //            , "Content-Type : application/json"
+    // , "Content-Type : application/json"
     })
     @FormUrlEncoded
     @POST("verify/{id}")
@@ -56,8 +56,28 @@ public interface Api {
             @Field("code") String code
     );
 
-    @GET("fuck")
-    Call<ResponseBody> getFuck();
+    // get user data for home page
+    @Headers({"Accept: application/json"
+    })
+    @GET("user/{id}")
+    Call<ResponseBody> getUserData(
+            @Header("Authorization") String authToken,
+            @Path("id") String id
+
+    );
+
+    // Admin login for register the user
+
+    @Headers({"Accept: application/json"
+            // , "Content-Type : application/json"
+    })
+    @FormUrlEncoded
+    @POST("adminlogin")
+    Call<ResponseBody> loginAdmin(
+            @Header("Authorization") String authToken,
+            @Field("student_no") String userName,
+            @Field("email") String Password
+    );
 
 
 }

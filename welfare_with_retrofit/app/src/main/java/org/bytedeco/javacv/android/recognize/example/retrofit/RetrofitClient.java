@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static final String BASE_URL = "http://192.168.43.170/projects/welfare_web_app/backend/public/api/";
+    private static final String IMAGE_URL = "http://192.168.43.170/projects/welfare_web_app/backend/public/";
 
     private static final String AUTH = "";
     private static RetrofitClient mInstance = null;
@@ -62,5 +63,9 @@ public class RetrofitClient {
 
     public Api getApi(){
         return retrofit.create(Api.class);
+    }
+
+    public static String getImageUrl() {
+        return IMAGE_URL;
     }
 }

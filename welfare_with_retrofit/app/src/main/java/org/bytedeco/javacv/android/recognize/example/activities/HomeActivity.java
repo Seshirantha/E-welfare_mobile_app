@@ -1,9 +1,12 @@
 package org.bytedeco.javacv.android.recognize.example.activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,7 +18,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.bytedeco.javacv.android.recognize.example.R;
@@ -25,8 +32,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.URL;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,10 +50,20 @@ public class HomeActivity extends AppCompatActivity
     @BindView(R.id.homeProgressBar)
     ProgressBar homeProgressBar;
 
+
+//    @BindView(R.id.tvStudentName)
+//    TextView tVStudentName;
+//
+//    @BindView(R.id.tvStudentEmail)
+//    TextView tVStudentEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        ButterKnife.bind(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -51,8 +71,10 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent goToOpevCvRecognizeActivity = new Intent(HomeActivity.this, OpenCvRecognizeActivity.class);
+                startActivity(goToOpevCvRecognizeActivity);
             }
         });
 
@@ -64,6 +86,7 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        getUserData(navigationView);
     }
 
     @Override
@@ -104,8 +127,15 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.nav_face_register) {
+            String userType = SharedPrefManager.getInstance(this).getUserType();
+            if (!userType.equals("ROLE_SUPERADMINA")){
+                Log.i(TAG, userType);
+                Toast.makeText(HomeActivity.this, userType, Toast.LENGTH_LONG).show();
+                doAdminLogin();
+            }else {
+                Toast.makeText(HomeActivity.this, "You are Super Admin", Toast.LENGTH_LONG).show();
+            }
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -123,15 +153,100 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
+    // get user data from backend
+    // also,
+    public void getUserData(NavigationView navigationView) {
+        View navViewHeader= navigationView.getHeaderView(0);
+        TextView studentName = (TextView)navViewHeader.findViewById(R.id.tvStudentName);
+        TextView studentEmail = (TextView)navViewHeader.findViewById(R.id.tvStudentEmail);
+        ImageView studentImage = (ImageView)navViewHeader.findViewById(R.id.ivUserImage);
 
-    public void getData() {
+        // get image  base url
+        String baseUrl = RetrofitClient.getImageUrl();
+
+        // visibleProgressBar();
+        String userToken = "Bearer " + SharedPrefManager.getInstance(this).getToken();
+        String userId = SharedPrefManager.getInstance(this).getUserId();
+
+        Call<ResponseBody> callToUserData = RetrofitClient
+                .getmInstance()
+                .getApi()
+                .getUserData(userToken, userId);
+
+        callToUserData.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+
+                    try {
+
+
+                        String json = response.body().string();
+                        Log.i(TAG, "onResponse: json : " + json);
+
+                        JSONObject data = null;
+                        data = new JSONObject(json);
+                        // Log.i(TAG, "onResponse logout: data : " + data);
+
+//                        String name = data.getString("first_name") + " " + data.getString("last_name");
+                        String url = baseUrl + data.getString("saved_path");
+                        Log.i(TAG, url);
+                        URL newurl = new URL(url);
+
+//                        Bitmap mIcon_val = BitmapFactory.decodeStream(newurl.openConnection() .getInputStream());
+//                        studentImage.setImageBitmap(mIcon_val);
+
+                        studentName.setText(data.getString("first_name") + " " + data.getString("last_name"));
+                        studentEmail.setText(data.getString("email"));
+
+                        // invisibleProgressBar();
+
+
+                    } catch (JSONException e) {
+                        // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+
+                    } catch (IOException e) {
+                       // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+                    }
+                }else {
+                    String json = null;
+                    try {
+                        json = response.errorBody().string();
+                        JSONObject data = null;
+                        data = new JSONObject(json);
+                        String errorMessage = data.getString("fail");
+                        // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse: json on error : " + errorMessage);
+
+                    } catch (IOException e) {
+                       // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse else IOException : " + e.getMessage());
+                    } catch (JSONException e) {
+                       // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse JSONException : " + e.getMessage());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+               // invisibleProgressBar();
+                // Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Log.i(TAG, "onFailure : " + t.getMessage());
+            }
+        });
 
     }
 
-
-
     public void logout() {
-//        visibleProgressBar();
+        //visibleProgressBar();
         String userToken = "Bearer " + SharedPrefManager.getInstance(this).getToken();
 
         // Toast.makeText(HomeActivity.this, userToken , Toast.LENGTH_LONG).show();
@@ -217,4 +332,134 @@ public class HomeActivity extends AppCompatActivity
         homeProgressBar.setVisibility(View.INVISIBLE);
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
     }
+
+    // Open dialog box for admin login
+    private void doAdminLogin () {
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(HomeActivity.this);
+        View adminLoginLayoutView = getLayoutInflater().inflate(R.layout.admin_login_dialog, null);
+        final EditText etAdminLoginUserName = (EditText) adminLoginLayoutView.findViewById(R.id.etAdminLogInUserName);
+        final EditText etAdminLoginPassword = ( EditText) adminLoginLayoutView.findViewById(R.id.etAdminLogInPassword);
+        final Button btnAdminLogin = (Button) adminLoginLayoutView.findViewById(R.id.btnAdminDoLogIn);
+        final Button btnAdminLoginCancel  = (Button) adminLoginLayoutView.findViewById(R.id.btnDoAdminLogInCancel);
+
+
+
+        // do admin login
+        btnAdminLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (doValidation(etAdminLoginUserName, etAdminLoginPassword)) {
+                    // write api call
+                    //visibleProgressBar();
+                    String userToken = "Bearer " + SharedPrefManager.getInstance(HomeActivity.this).getToken();
+
+                     //Toast.makeText(HomeActivity.this, etAdminLoginUserName.getText().toString(), Toast.LENGTH_LONG).show();
+                    Call<ResponseBody> adminLoginCall = RetrofitClient
+                            .getmInstance()
+                            .getApi()
+                            .loginAdmin(userToken, etAdminLoginUserName.getText().toString(),
+                                    etAdminLoginPassword.getText().toString());
+
+                    adminLoginCall.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                            if (response.isSuccessful()) {
+
+                                try {
+
+                                    String json = response.body().string();
+                                    Log.i(TAG, "onResponse: json : " + json);
+
+                                    JSONObject data = null;
+                                    data = new JSONObject(json);
+                                    Log.i(TAG, "onResponse logout: data : " + data);
+                                    // String status = data.getString("message");
+                                    //invisibleProgressBar();
+                                    // Intent goToHomeIntent = new Intent(HomeActivity.this, MainActivity.class);
+                                    //Toast.makeText(HomeActivity.this, status, Toast.LENGTH_LONG).show();
+                                    // startActivity(goToHomeIntent);
+
+
+                                } catch (JSONException e) {
+                                    invisibleProgressBar();
+                                    Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                    Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+
+                                } catch (IOException e) {
+                                    invisibleProgressBar();
+                                    Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                    Log.e(TAG, "onResponse: jsonException: " + e.getMessage());
+                                }
+                            }else {
+                                String json = null;
+                                try {
+                                    json = response.errorBody().string();
+                                    JSONObject data = null;
+                                    data = new JSONObject(json);
+                                    String errorMessage = data.getString("fail");
+                                    invisibleProgressBar();
+                                    Toast.makeText(HomeActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+                                    Log.i(TAG, "onResponse: json on error : " + errorMessage);
+
+                                } catch (IOException e) {
+                                    invisibleProgressBar();
+                                    Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                    Log.i(TAG, "onResponse else IOException : " + e.getMessage());
+                                } catch (JSONException e) {
+                                    invisibleProgressBar();
+                                    Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                    Log.i(TAG, "onResponse JSONException : " + e.getMessage());
+                                }
+                            }
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+                            invisibleProgressBar();
+                            // Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                            Log.i(TAG, "onFailure : " + t.getMessage());
+                        }
+                    });
+
+                }
+            }
+        });
+
+        alertDialogBuilder.setView(adminLoginLayoutView);
+        AlertDialog dialog = alertDialogBuilder.create();
+        dialog.show();
+
+        // cancel dialog
+        btnAdminLoginCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+    }
+
+    private boolean doValidation(EditText etUsername, EditText etPassword) {
+
+        boolean isValid = true;
+
+        // Validate student no
+        if (etUsername.getText().toString().isEmpty()) {
+            // inputLayoutStudentNo.setError("Student no required");
+            etUsername.setError("User name is required");
+            isValid = false;
+        }
+
+        // validate password
+        if (etPassword.getText().toString().trim().length() < 8) {
+            // inputLayoutPassword.setError("Minimum 8 characters required");
+            etPassword.setError("Minimum 8 characters required");
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
 }

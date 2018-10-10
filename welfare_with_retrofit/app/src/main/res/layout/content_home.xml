@@ -18,4 +18,6 @@
         android:id="@+id/homeProgressBar"
         android:progressDrawable="@drawable/progress_circle"/>
 
+
+
 </RelativeLayout>
