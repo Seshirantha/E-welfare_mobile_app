@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import org.bytedeco.javacpp.DoublePointer;
 import org.bytedeco.javacpp.IntPointer;
@@ -49,6 +50,9 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
     opencv_face.FaceRecognizer faceRecognizer = createEigenFaceRecognizer();
     boolean trained;
 
+    // customized
+    LinearLayout adminBtnLinearLayout;
+
     private boolean hasPermissions(Context context, String... permissions) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
             for (String permission : permissions) {
@@ -64,12 +68,25 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opencv);
+
         if (Build.VERSION.SDK_INT >= 23) {
+
             String[] PERMISSIONS = {android.Manifest.permission.READ_EXTERNAL_STORAGE,android.Manifest.permission.WRITE_EXTERNAL_STORAGE};
             if (!hasPermissions(this, PERMISSIONS)) {
                 ActivityCompat.requestPermissions(this, PERMISSIONS, 1 );
             }
         }
+
+        // LinearLayout that contains all the buttons
+        adminBtnLinearLayout = findViewById(R.id.admin_buttons_liner_layout);
+        // Get the value from intent and show visible LinearLayout that contains the camera buttons
+        int valuePassedInIntent = getIntent().getIntExtra("KEY", 0);
+        // Show and hide buttons according to value passed by intend.
+        if( valuePassedInIntent == 1){
+            // Show LinearLayout that contains camera control buttons.
+            adminBtnLinearLayout.setVisibility(View.VISIBLE);
+        }
+
         cameraView = (CvCameraPreview) findViewById(R.id.camera_view);
         cameraView.setCvCameraViewListener(this);
 

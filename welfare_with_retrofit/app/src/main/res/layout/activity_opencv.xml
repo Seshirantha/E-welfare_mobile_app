@@ -13,26 +13,45 @@
         app:camera_type="front"
         app:scale_type="full" />
 
-    <Button
-        android:id="@+id/btTrain"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/admin_buttons_liner_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start Train"
-        android:layout_gravity="bottom|left"
-        />
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Take Photo"
-        android:layout_gravity="bottom|center_horizontal"/>
+        <Button
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white"
+            android:id="@+id/btTrain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start Train"
+            android:layout_gravity="bottom|left"
+            />
 
-    <Button
-        android:id="@+id/btReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset"
-        android:layout_gravity="bottom|right"/>
+        <Button
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white"
+            android:id="@+id/btPhoto"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Take Photo"
+            android:layout_gravity="bottom|center_horizontal"/>
+
+        <Button
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white"
+            android:id="@+id/btReset"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_gravity="bottom|right"/>
+
+    </LinearLayout>
 
 </FrameLayout>

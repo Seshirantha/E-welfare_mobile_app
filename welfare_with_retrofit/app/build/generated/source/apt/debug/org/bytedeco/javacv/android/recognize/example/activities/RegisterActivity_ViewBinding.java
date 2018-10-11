@@ -16,9 +16,9 @@ import org.bytedeco.javacv.android.recognize.example.R;
 public class RegisterActivity_ViewBinding implements Unbinder {
   private RegisterActivity target;
 
-  private View view2131230766;
+  private View view2131230767;
 
-  private View view2131230763;
+  private View view2131230764;
 
   @UiThread
   public RegisterActivity_ViewBinding(RegisterActivity target) {
@@ -39,7 +39,7 @@ public class RegisterActivity_ViewBinding implements Unbinder {
     target.inputLayoutPassword = Utils.findRequiredViewAsType(source, R.id.inputLayoutPassword, "field 'inputLayoutPassword'", TextInputLayout.class);
     target.inputLayoutConfirmPassword = Utils.findRequiredViewAsType(source, R.id.inputLayoutConfirmPassword, "field 'inputLayoutConfirmPassword'", TextInputLayout.class);
     view = Utils.findRequiredView(source, R.id.btnDoRegister, "method 'register'");
-    view2131230766 = view;
+    view2131230767 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -47,7 +47,7 @@ public class RegisterActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.btnDoCancel, "method 'cancel'");
-    view2131230763 = view;
+    view2131230764 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -72,9 +72,9 @@ public class RegisterActivity_ViewBinding implements Unbinder {
     target.inputLayoutPassword = null;
     target.inputLayoutConfirmPassword = null;
 
-    view2131230766.setOnClickListener(null);
-    view2131230766 = null;
-    view2131230763.setOnClickListener(null);
-    view2131230763 = null;
+    view2131230767.setOnClickListener(null);
+    view2131230767 = null;
+    view2131230764.setOnClickListener(null);
+    view2131230764 = null;
   }
 }

@@ -5,6 +5,7 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import java.lang.IllegalStateException;
@@ -24,6 +25,9 @@ public class HomeActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     target.homeProgressBar = Utils.findRequiredViewAsType(source, R.id.homeProgressBar, "field 'homeProgressBar'", ProgressBar.class);
+    target.tvHomeScholarship = Utils.findRequiredViewAsType(source, R.id.tvHomeSchol, "field 'tvHomeScholarship'", TextView.class);
+    target.tvHomeDuration = Utils.findRequiredViewAsType(source, R.id.tvHomeDuration, "field 'tvHomeDuration'", TextView.class);
+    target.tvHomeScholStatus = Utils.findRequiredViewAsType(source, R.id.tvHomeScholStatus, "field 'tvHomeScholStatus'", TextView.class);
   }
 
   @Override
@@ -34,5 +38,8 @@ public class HomeActivity_ViewBinding implements Unbinder {
     this.target = null;
 
     target.homeProgressBar = null;
+    target.tvHomeScholarship = null;
+    target.tvHomeDuration = null;
+    target.tvHomeScholStatus = null;
   }
 }

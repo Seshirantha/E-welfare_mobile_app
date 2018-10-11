@@ -28,6 +28,7 @@ import android.widget.Toast;
 import org.bytedeco.javacv.android.recognize.example.R;
 import org.bytedeco.javacv.android.recognize.example.preferences.SharedPrefManager;
 import org.bytedeco.javacv.android.recognize.example.retrofit.RetrofitClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -50,12 +51,14 @@ public class HomeActivity extends AppCompatActivity
     @BindView(R.id.homeProgressBar)
     ProgressBar homeProgressBar;
 
+    @BindView(R.id.tvHomeSchol)
+    TextView tvHomeScholarship;
 
-//    @BindView(R.id.tvStudentName)
-//    TextView tVStudentName;
-//
-//    @BindView(R.id.tvStudentEmail)
-//    TextView tVStudentEmail;
+    @BindView(R.id.tvHomeDuration)
+    TextView tvHomeDuration;
+
+    @BindView(R.id.tvHomeScholStatus)
+    TextView tvHomeScholStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +89,10 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        getDashboardData();
         getUserData(navigationView);
+
     }
 
     @Override
@@ -136,21 +142,111 @@ public class HomeActivity extends AppCompatActivity
             }else {
                 Toast.makeText(HomeActivity.this, "You are Super Admin", Toast.LENGTH_LONG).show();
             }
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_face_recognize) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+            Intent goToOpenCvRecognze = new Intent(HomeActivity.this, OpenCvRecognizeActivity.class);
+            startActivity(goToOpenCvRecognze);
 
         }
+//        else if (id == R.id.nav_slideshow) {
+//
+//        } else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
+//
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    // get user data from backend
+    // also,
+    public void getDashboardData() {
+
+
+        // visibleProgressBar();
+        String userToken = "Bearer " + SharedPrefManager.getInstance(this).getToken();
+        String userId = SharedPrefManager.getInstance(this).getUserId();
+
+        Call<ResponseBody> callToUserData = RetrofitClient
+                .getmInstance()
+                .getApi()
+                .dashboardData(userToken, userId);
+
+        callToUserData.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+
+                    try {
+
+
+                        String json = response.body().string();
+                         Log.i(TAG, "onResponse :On Dashboard json : " + json);
+
+
+                        JSONArray jsonArray = null;
+                        jsonArray = new JSONArray(json);
+                        Log.i(TAG, "onResponse dashboard: data : " + jsonArray.get(0).toString());
+
+                        JSONObject data = null;
+                        data = new JSONObject(jsonArray.get(0).toString());
+                        Log.i(TAG, "onResponse dashboard: schol : " + data.getString("scholership_name"));
+
+                        // studentName.setText(data.getString("first_name") + " " + data.getString("last_name"));
+                        //studentEmail.setText(data.getString("email"));
+                        tvHomeScholarship.setText(data.getString("scholership_name"));
+                        tvHomeDuration.setText(data.getString("period"));
+                        tvHomeScholStatus.setText(data.getString("signature_status"));
+
+                        // invisibleProgressBar();
+
+
+                    } catch (JSONException e) {
+                        // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "onResponse:On Dashboard jsonException: " + e.getMessage());
+
+                    } catch (IOException e) {
+                        // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, "onResponse:On Dashboard jsonException: " + e.getMessage());
+                    }
+                }else {
+                    String json = null;
+                    try {
+                        json = response.errorBody().string();
+                        JSONObject data = null;
+                        data = new JSONObject(json);
+                        String errorMessage = data.getString("fail");
+                        // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse:On Dashboard json on error : " + errorMessage);
+
+                    } catch (IOException e) {
+                        // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse else IOException On Dashboard : " + e.getMessage());
+                    } catch (JSONException e) {
+                        // invisibleProgressBar();
+                        Toast.makeText(HomeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i(TAG, "onResponse JSONException On Dashboard: " + e.getMessage());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                // invisibleProgressBar();
+                // Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Log.i(TAG, "onFailure : " + t.getMessage());
+            }
+        });
+
     }
 
     // get user data from backend
@@ -343,8 +439,6 @@ public class HomeActivity extends AppCompatActivity
         final Button btnAdminLogin = (Button) adminLoginLayoutView.findViewById(R.id.btnAdminDoLogIn);
         final Button btnAdminLoginCancel  = (Button) adminLoginLayoutView.findViewById(R.id.btnDoAdminLogInCancel);
 
-
-
         // do admin login
         btnAdminLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -353,34 +447,34 @@ public class HomeActivity extends AppCompatActivity
                     // write api call
                     //visibleProgressBar();
                     String userToken = "Bearer " + SharedPrefManager.getInstance(HomeActivity.this).getToken();
+                    String userName = etAdminLoginUserName.getText().toString();
+                    String password = etAdminLoginPassword.getText().toString();
 
                      //Toast.makeText(HomeActivity.this, etAdminLoginUserName.getText().toString(), Toast.LENGTH_LONG).show();
+
                     Call<ResponseBody> adminLoginCall = RetrofitClient
                             .getmInstance()
                             .getApi()
-                            .loginAdmin(userToken, etAdminLoginUserName.getText().toString(),
-                                    etAdminLoginPassword.getText().toString());
+                            .loginAdmin(
+                                   userToken, userName, password
+                                    );
 
                     adminLoginCall.enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
                             if (response.isSuccessful()) {
 
                                 try {
 
                                     String json = response.body().string();
-                                    Log.i(TAG, "onResponse: json : " + json);
+                                    //Log.i(TAG, "onResponse: json : " + json);
 
                                     JSONObject data = null;
                                     data = new JSONObject(json);
                                     Log.i(TAG, "onResponse logout: data : " + data);
-                                    // String status = data.getString("message");
-                                    //invisibleProgressBar();
-                                    // Intent goToHomeIntent = new Intent(HomeActivity.this, MainActivity.class);
-                                    //Toast.makeText(HomeActivity.this, status, Toast.LENGTH_LONG).show();
-                                    // startActivity(goToHomeIntent);
-
+                                    Intent goToOpenCVIntent = new Intent(HomeActivity.this, OpenCvRecognizeActivity.class);
+                                    goToOpenCVIntent.putExtra("KEY", 1);
+                                    startActivity(goToOpenCVIntent);
 
                                 } catch (JSONException e) {
                                     invisibleProgressBar();
@@ -401,7 +495,7 @@ public class HomeActivity extends AppCompatActivity
                                     String errorMessage = data.getString("fail");
                                     invisibleProgressBar();
                                     Toast.makeText(HomeActivity.this, errorMessage, Toast.LENGTH_LONG).show();
-                                    Log.i(TAG, "onResponse: json on error : " + errorMessage);
+                                    Log.i(TAG, "onResponse: json on errors : " + errorMessage);
 
                                 } catch (IOException e) {
                                     invisibleProgressBar();
@@ -413,14 +507,15 @@ public class HomeActivity extends AppCompatActivity
                                     Log.i(TAG, "onResponse JSONException : " + e.getMessage());
                                 }
                             }
-
                         }
 
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
+
                             invisibleProgressBar();
                             // Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
                             Log.i(TAG, "onFailure : " + t.getMessage());
+
                         }
                     });
 
@@ -442,23 +537,19 @@ public class HomeActivity extends AppCompatActivity
     }
 
     private boolean doValidation(EditText etUsername, EditText etPassword) {
-
         boolean isValid = true;
-
         // Validate student no
         if (etUsername.getText().toString().isEmpty()) {
             // inputLayoutStudentNo.setError("Student no required");
             etUsername.setError("User name is required");
             isValid = false;
         }
-
         // validate password
         if (etPassword.getText().toString().trim().length() < 8) {
             // inputLayoutPassword.setError("Minimum 8 characters required");
             etPassword.setError("Minimum 8 characters required");
             isValid = false;
         }
-
         return isValid;
     }
 

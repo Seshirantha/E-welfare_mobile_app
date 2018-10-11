@@ -17,9 +17,9 @@ import org.bytedeco.javacv.android.recognize.example.R;
 public class VerifyActivity_ViewBinding implements Unbinder {
   private VerifyActivity target;
 
-  private View view2131230767;
-
   private View view2131230768;
+
+  private View view2131230769;
 
   @UiThread
   public VerifyActivity_ViewBinding(VerifyActivity target) {
@@ -35,7 +35,7 @@ public class VerifyActivity_ViewBinding implements Unbinder {
     target.etVerifyCode = Utils.findRequiredViewAsType(source, R.id.etVerifyCode, "field 'etVerifyCode'", EditText.class);
     target.inputLayoutVerifyCode = Utils.findRequiredViewAsType(source, R.id.inputLayoutVerifyCode, "field 'inputLayoutVerifyCode'", TextInputLayout.class);
     view = Utils.findRequiredView(source, R.id.btnDoVerify, "method 'doVerification'");
-    view2131230767 = view;
+    view2131230768 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -43,7 +43,7 @@ public class VerifyActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.btnDoVerifyCancel, "method 'doVerifyCancel'");
-    view2131230768 = view;
+    view2131230769 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -63,9 +63,9 @@ public class VerifyActivity_ViewBinding implements Unbinder {
     target.etVerifyCode = null;
     target.inputLayoutVerifyCode = null;
 
-    view2131230767.setOnClickListener(null);
-    view2131230767 = null;
     view2131230768.setOnClickListener(null);
     view2131230768 = null;
+    view2131230769.setOnClickListener(null);
+    view2131230769 = null;
   }
 }

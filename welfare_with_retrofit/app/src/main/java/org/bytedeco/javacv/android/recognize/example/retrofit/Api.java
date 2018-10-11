@@ -67,9 +67,8 @@ public interface Api {
     );
 
     // Admin login for register the user
-
     @Headers({"Accept: application/json"
-            // , "Content-Type : application/json"
+            //, "Content-Type : application/json"
     })
     @FormUrlEncoded
     @POST("adminlogin")
@@ -77,6 +76,16 @@ public interface Api {
             @Header("Authorization") String authToken,
             @Field("student_no") String userName,
             @Field("email") String Password
+    );
+
+    // get dashboard data
+    @Headers({"Accept: application/json"
+    })
+    @GET("dashboraduser/{id}")
+    Call<ResponseBody> dashboardData(
+            @Header("Authorization") String authToken,
+            @Path("id") String id
+
     );
 
 

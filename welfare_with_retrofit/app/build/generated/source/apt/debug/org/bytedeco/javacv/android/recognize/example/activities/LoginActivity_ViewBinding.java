@@ -17,9 +17,9 @@ import org.bytedeco.javacv.android.recognize.example.R;
 public class LoginActivity_ViewBinding implements Unbinder {
   private LoginActivity target;
 
-  private View view2131230764;
-
   private View view2131230765;
+
+  private View view2131230766;
 
   @UiThread
   public LoginActivity_ViewBinding(LoginActivity target) {
@@ -37,7 +37,7 @@ public class LoginActivity_ViewBinding implements Unbinder {
     target.textInputLayoutLogInPasswrod = Utils.findRequiredViewAsType(source, R.id.inputLayoutLogInPassword, "field 'textInputLayoutLogInPasswrod'", TextInputLayout.class);
     target.loginProgressBar = Utils.findRequiredViewAsType(source, R.id.loginProgressBar, "field 'loginProgressBar'", ProgressBar.class);
     view = Utils.findRequiredView(source, R.id.btnDoLogIn, "method 'login'");
-    view2131230764 = view;
+    view2131230765 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -45,7 +45,7 @@ public class LoginActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.btnDoLogInCancel, "method 'doLoginCancel'");
-    view2131230765 = view;
+    view2131230766 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -67,9 +67,9 @@ public class LoginActivity_ViewBinding implements Unbinder {
     target.textInputLayoutLogInPasswrod = null;
     target.loginProgressBar = null;
 
-    view2131230764.setOnClickListener(null);
-    view2131230764 = null;
     view2131230765.setOnClickListener(null);
     view2131230765 = null;
+    view2131230766.setOnClickListener(null);
+    view2131230766 = null;
   }
 }
