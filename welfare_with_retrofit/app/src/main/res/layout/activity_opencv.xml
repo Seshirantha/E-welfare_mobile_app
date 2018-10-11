@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     android:background="@android:color/black">
 
+    <!--<ProgressBar-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:indeterminate="true"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:visibility="invisible"-->
+        <!--android:id="@+id/cvProgressBar"-->
+        <!--android:progressDrawable="@drawable/progress_circle"/>-->
+
     <org.bytedeco.javacv.android.recognize.example.recognizeHelpers.CvCameraPreview
         android:id="@+id/camera_view"
         android:layout_width="match_parent"

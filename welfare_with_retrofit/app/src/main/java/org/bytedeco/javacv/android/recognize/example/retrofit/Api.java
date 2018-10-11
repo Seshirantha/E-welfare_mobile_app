@@ -88,5 +88,16 @@ public interface Api {
 
     );
 
+    // sign by mobile
+    @Headers({"Accept: application/json"
+            //, "Content-Type : application/json"
+    })
+    @FormUrlEncoded
+    @POST("signature")
+    Call<ResponseBody> signForInstallment(
+            @Header("Authorization") String authToken,
+            @Field("user_id") String userId
+    );
+
 
 }
