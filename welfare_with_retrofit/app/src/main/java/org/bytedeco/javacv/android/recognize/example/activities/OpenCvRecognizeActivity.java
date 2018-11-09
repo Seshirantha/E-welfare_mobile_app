@@ -53,7 +53,7 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
     public static final String TAG = "OpenCvRecognizeActivity";
 
     private CascadeClassifier faceDetector;
-    private String[] nomes = {"", "Y Know You"};
+    private String[] nomes = {"", "I know you"};
     private int absoluteFaceSize = 0;
     private CvCameraPreview cameraView;
     boolean takePhoto;
@@ -90,6 +90,7 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
         setContentView(R.layout.activity_opencv);
 
         ButterKnife.bind(this);
+
         // The application support only, for SDK version >= 23
         if (Build.VERSION.SDK_INT >= 23) {
 
@@ -111,6 +112,9 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
             // Show LinearLayout that contains camera control buttons.
             adminBtnLinearLayout.setVisibility(View.VISIBLE);
         }
+
+        // Log.i(TAG, getIntent().getExtras().getString("studentName"));
+        nomes[1] = getIntent().getExtras().getString("studentName");
 
         // Refer to the CvCameraPreview.
         // CvCameraPreview is the graphical object used to display a real-time preview of the Camera.
@@ -312,7 +316,6 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
             count++;
             Log.i(TAG, String.valueOf(count));
 
-
             if( count == 120 ){
                 // Here is the code for update database.
                 //Toast.makeText(getApplicationContext(), "Database updated", Toast.LENGTH_LONG).show();
@@ -501,7 +504,9 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                // invisibleProgressBar();
+                // Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Log.i(TAG, "onFailure : " + t.getMessage());
             }
         });
     }

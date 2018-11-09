@@ -48,6 +48,8 @@ public class HomeActivity extends AppCompatActivity
 
     private static final String TAG = "HomeActivity";
 
+    private String globalStudentName = "";
+
     @BindView(R.id.homeProgressBar)
     ProgressBar homeProgressBar;
 
@@ -77,6 +79,7 @@ public class HomeActivity extends AppCompatActivity
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
                 Intent goToOpevCvRecognizeActivity = new Intent(HomeActivity.this, OpenCvRecognizeActivity.class);
+                goToOpevCvRecognizeActivity.putExtra("studentName", globalStudentName);
                 startActivity(goToOpevCvRecognizeActivity);
             }
         });
@@ -145,6 +148,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_face_recognize) {
 
             Intent goToOpenCvRecognze = new Intent(HomeActivity.this, OpenCvRecognizeActivity.class);
+            goToOpenCvRecognze.putExtra("studentName", globalStudentName);
             startActivity(goToOpenCvRecognze);
 
         }
@@ -257,6 +261,7 @@ public class HomeActivity extends AppCompatActivity
         TextView studentEmail = (TextView)navViewHeader.findViewById(R.id.tvStudentEmail);
         ImageView studentImage = (ImageView)navViewHeader.findViewById(R.id.ivUserImage);
 
+
         // get image  base url
         String baseUrl = RetrofitClient.getImageUrl();
 
@@ -294,6 +299,11 @@ public class HomeActivity extends AppCompatActivity
 
                         studentName.setText(data.getString("first_name") + " " + data.getString("last_name"));
                         studentEmail.setText(data.getString("email"));
+
+                        // set student name to global variable because, it used in
+                        // OpenCvRecognizeActivity to display string, ex:  "Shirantha I know you"
+                        globalStudentName = data.getString("first_name");
+                        // Log.i(TAG, globalStudentName);
 
                         // invisibleProgressBar();
 

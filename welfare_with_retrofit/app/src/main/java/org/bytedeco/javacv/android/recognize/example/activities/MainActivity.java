@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnRegister)
     public void goToRegister(){
 
-        startActivity(new Intent(MainActivity.this, HomeActivity.class));
+        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
 
     }
 

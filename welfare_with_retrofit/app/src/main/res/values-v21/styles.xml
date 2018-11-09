@@ -9,7 +9,5 @@
         <item name="textColorError">@color/error_color</item>
         <item name="android:colorControlNormal">@color/colorPrimary</item>
 
-
     </style>
-
 </resources>

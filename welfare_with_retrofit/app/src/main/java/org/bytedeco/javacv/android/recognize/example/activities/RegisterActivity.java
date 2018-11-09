@@ -104,6 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
         String sPassword = etPassword.getText().toString();
         String sConfirm_password = etConfirmPassword.getText().toString();
 
+
         if (doValidation(sStudent_no, sEmail, sPassword, sConfirm_password)) {
 
             callHttpRegister(sStudent_no, sEmail, sPassword, sConfirm_password);
