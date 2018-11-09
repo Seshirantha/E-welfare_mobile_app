@@ -196,6 +196,8 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
                 });
             }
         }.execute();
+
+        count = 0;
     }
 
     // Invoke after click on train button.
@@ -320,7 +322,11 @@ public class OpenCvRecognizeActivity extends Activity implements CvCameraPreview
                 // Here is the code for update database.
                 //Toast.makeText(getApplicationContext(), "Database updated", Toast.LENGTH_LONG).show();
                 signForSchol();
+               // count = 0;
             }
+
+            // reset count variable
+            // count = 0;
         }
 
         // Draw a text

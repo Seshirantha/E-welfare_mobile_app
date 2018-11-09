@@ -27,6 +27,7 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppMaterialTheme" >
         <activity android:name="org.bytedeco.javacv.android.recognize.example.activities.MainActivity" >
             <intent-filter>
