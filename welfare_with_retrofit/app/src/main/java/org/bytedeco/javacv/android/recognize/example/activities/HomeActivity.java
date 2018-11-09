@@ -140,7 +140,7 @@ public class HomeActivity extends AppCompatActivity
             String userType = SharedPrefManager.getInstance(this).getUserType();
             if (!userType.equals("ROLE_SUPERADMINA")){
                 Log.i(TAG, userType);
-                Toast.makeText(HomeActivity.this, userType, Toast.LENGTH_LONG).show();
+                // Toast.makeText(HomeActivity.this, userType, Toast.LENGTH_LONG).show();
                 doAdminLogin();
             }else {
                 Toast.makeText(HomeActivity.this, "You are Super Admin", Toast.LENGTH_LONG).show();

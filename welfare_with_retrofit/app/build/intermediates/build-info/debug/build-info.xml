@@ -5,23 +5,24 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.1.2"
-    timestamp="1540005683076"
+    timestamp="1541760539486"
     token="-146801955651444851"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="9549" />
+        duration="15038" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="1803" />
     <task
         name="verifier"
-        duration="0" />
+        duration="219" />
 
     <artifact
         location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -29,8 +30,11 @@
 
     <build
         build-mode="FULL"
-        timestamp="1540003681552"
+        timestamp="1541760117307"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\instant-run-apk\debug\app-armeabi-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
@@ -64,13 +68,11 @@
         <artifact
             location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\instant-run-apk\debug\app-armeabi-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1540005683076"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1541760539486"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\semad\AndroidStudioProjects\welfare_mobile_app\welfare_with_retrofit\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
