@@ -1,4 +1,4 @@
-# welfare_mobile_app
+# E-Welfare mobile app
 “E-Welfare Mobile app” is an Android application . Features are REST full API with retrofit,  Token-based authentication,  Interactive forms and validation, Face detection and  Face recognition using Java CV.
 
 Steps to run,
